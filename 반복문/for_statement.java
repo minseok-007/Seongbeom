@@ -26,6 +26,7 @@ public class for_statement {
         for (int i = 1; i <= 10; i++) {
             sum = sum + i;
         }
+
         System.out.println(sum);
 
 
