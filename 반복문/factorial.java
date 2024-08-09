@@ -2,7 +2,7 @@ package 반복문;
 
 import java.util.Scanner;
 
-public class rm factorial {
+public class factorial {
     public static void main(String[] args) {
         // 5! = 5x4x3x2x1
         int num;

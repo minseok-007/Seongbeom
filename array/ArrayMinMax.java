@@ -1,6 +1,6 @@
 package array;
 
-public class i ArrayMinMax {
+public class ArrayMinMax {
     public static void main(String[] args) {
         int [] score = {50,40,70,80,90,30};
 
