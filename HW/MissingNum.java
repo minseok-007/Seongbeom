@@ -5,6 +5,7 @@ public class MissingNum {
         int[] nums1 = {3, 0, 1};
         int[] nums2 = {0, 1};
         int[] nums3 = {9, 6, 4, 2, 3, 5, 7, 0, 1};
+        System.out.println(missingNumber(nums3));
     }
     public static int missingNumber(int[] nums) {
         int n = nums.length;
@@ -14,6 +15,6 @@ public class MissingNum {
         for (int i = 0; i < n; i++) {
             sum += nums[i];
         }
-        System.out.println(exsum - sum);
+        return exsum - sum;
     }
 }
