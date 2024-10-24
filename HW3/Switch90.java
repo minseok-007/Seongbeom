@@ -18,5 +18,7 @@ public class Switch90 {
             }
         }
         System.out.println(Arrays.deepToString(rotated));
+
+        // 다음 시간에 기존 matrix array 에다가 rotate 하는 거
     }
 }
