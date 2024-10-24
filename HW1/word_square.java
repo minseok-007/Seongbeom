@@ -1,4 +1,4 @@
-package HW;
+package HW1;
 
 public class word_square {
     public static void main(String[] args) {

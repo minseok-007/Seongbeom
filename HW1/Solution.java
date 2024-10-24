@@ -1,6 +1,4 @@
-package HW;
-
-import java.util.Arrays;
+package HW1;
 
 public class Solution {
     public static int[] plusOne(int[] digits) {
