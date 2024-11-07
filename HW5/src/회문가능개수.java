@@ -8,11 +8,24 @@ import java.util.Map;
 
 
 public class 회문가능개수 {
- String s = "civic";
- public static boolean 회문가능개수 (String s){
-  Map<Character, Integer> map = new HashMap<Character, Integer>();
-  for (int i = 0; i < s.length(); i++) {
+    public static boolean canFormPalindrome(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
 
+        int oddCount = 0;
+        for (int count : map.values()) {
+            if (count % 2 != 0) {
+                oddCount++;
+            }
+            if (oddCount > 1) return false;
+        }
+        return true;
     }
-  }
+
+    public static void main(String[] args) {
+        System.out.println(canFormPalindrome("cavic"));
+    }
+
 }

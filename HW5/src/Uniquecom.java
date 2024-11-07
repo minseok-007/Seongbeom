@@ -11,8 +11,22 @@ import java.util.Set;
 
 public class Uniquecom {
     public static void main(String[] args) {
-        int minlen = 2;
-        Set<String> set = new HashSet<String>();
-//다양한 조합을 어떻게 만들어야 할지 잘 모르겠어요
+        System.out.println(uniqueCombinations("abc", 2));
+    }
+
+    public static Set<String> uniqueCombinations(String s, int n) {
+        Set<String> result = new HashSet<>();
+        generateCombinations(s, "", 0, n, result);
+        return result;
+    }
+
+    private static void generateCombinations(String s, String current, int index, int n, Set<String> result) {
+        if (current.length() >= n) {
+            result.add(current);
+        }
+
+        for (int i = index; i < s.length(); i++) {
+            generateCombinations(s, current + s.charAt(i), i + 1, n, result);
+        }
     }
 }
