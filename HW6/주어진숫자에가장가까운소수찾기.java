@@ -4,4 +4,32 @@ package HW6;
 //예시 출력: 11
 //문제 이해X
 public class 주어진숫자에가장가까운소수찾기 {
+    public static int nearestPrimeNumber(int num) {
+        if (num <= 1) return 2;
+
+        int low = num - 1; // 9
+        int high = num + 1; // 11
+        if (isPrime(num)) return num;
+
+        while(true) {
+            if (low > 1 && isPrime(low)) return low;
+            if (isPrime(high)) return high;
+            low--;
+            high++;
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        if (num < 2) return false;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int nearest = nearestPrimeNumber(10);
+        System.out.println(nearest);
+
+    }
 }

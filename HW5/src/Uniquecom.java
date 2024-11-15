@@ -28,5 +28,6 @@ public class Uniquecom {
         for (int i = index; i < s.length(); i++) {
             generateCombinations(s, current + s.charAt(i), i + 1, n, result);
         }
+
     }
 }

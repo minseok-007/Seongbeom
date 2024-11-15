@@ -7,14 +7,26 @@ package HW6;
 
 public class 숫자뒤집기 {
     public static int reverse(int number){
-    int absNumber = Math.abs(number);
-    String reversdStr = new StringBuilder(String.valueOf(absNumber)).reverse().toString();
-    int reversedNumber = Integer.parseInt(reversdStr);
+//    int absNumber = Math.abs(number);
+//    String reversdStr = new StringBuilder(String.valueOf(absNumber)).reverse().toString();
+//    int reversedNumber = Integer.parseInt(reversdStr);
+//
+//    if (number < 0){
+//        reversedNumber = -reversedNumber;
+//        }
+//    return reversedNumber;
 
-    if (number < 0){
-        reversedNumber = -reversedNumber;
+        // 0
+        // 321
+        int sign = number < 0 ? - 1 : 1;
+        number = Math.abs(number);
+        int reversedNumber = 0;
+        while (number > 0) {
+            reversedNumber = reversedNumber * 10 + number % 10;
+            number /= 10;
         }
-    return reversedNumber;
+        return reversedNumber * sign;
+
     }
     public static void main(String[] args) {
         System.out.println(reverse(1234));

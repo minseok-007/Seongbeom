@@ -8,9 +8,23 @@ import java.util.Arrays;
 public class 두배열병합및정렬 {
     public static int[] addTwoarr (int [] a, int [] b ){
     int [] addedarr = new int[a.length + b.length];
-    System.arraycopy(a, 0, addedarr, 0, a.length);
-    System.arraycopy(b, 0, addedarr, a.length, b.length);
-    Arrays.sort(addedarr);
+    int a_index = 0;
+    int b_index = 0;
+    int addedarr_index = 0;
+    while (a_index < a.length && b_index < b.length) {
+        if (a[a_index] >= b[b_index]) {
+            addedarr[addedarr_index] = b[b_index];
+            b_index++;
+        } else {
+            addedarr[addedarr_index] = a[a_index];
+            a_index++;
+        }
+        addedarr_index++;
+    }
+
+//    System.arraycopy(a, 0, addedarr, 0, a.length);
+//    System.arraycopy(b, 0, addedarr, a.length, b.length);
+//    Arrays.sort(addedarr);
     return addedarr;
     }
     public static void main(String[] args) {
