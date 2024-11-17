@@ -2,7 +2,7 @@ package DataStructure;
 
 import java.util.ArrayList;
 
-public class List {
+public class List<I extends Number> {
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<>();
 
