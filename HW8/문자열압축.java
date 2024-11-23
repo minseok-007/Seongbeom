@@ -6,4 +6,30 @@ package HW8;
 //Output: "abc"  // 압축이 원래보다 길기 때문에 그대로 반환
 
 public class 문자열압축 {
+
+    public static String stringCompression(String s) {
+        StringBuilder sb = new StringBuilder();
+        int count = 1;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                count++;
+            } else {
+                sb.append(s.charAt(i - 1)).append(count);
+                count = 1;
+            }
+        }
+
+        sb.append(s.charAt(s.length() - 1)).append(count);
+
+//        if (sb.length() < s.length()) {
+//            return sb.toString();
+//        } else {
+//            return s;
+//        }
+
+        return sb.length() < s.length() ? sb.toString() : s;
+    }
+    public static void main(String[] args) {
+        System.out.println(stringCompression("aaabbccc"));
+    }
 }

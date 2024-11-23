@@ -28,7 +28,6 @@ public class LongestIncreasing {
             }
             maxLength = Math.max(maxLength, dp[i]);
         }
-
         return maxLength;
     }
 }
